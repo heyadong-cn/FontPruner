@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 public class ExtractionOperationUtil {
 
 	/***
-	 * ÊÇ·ñÊÇºº×Ö
+	 * ï¿½Ç·ï¿½ï¿½Çºï¿½ï¿½ï¿½
 	 */
 	public static boolean isChineseCharacters(String str){
         boolean temp = false;
@@ -32,10 +32,10 @@ public class ExtractionOperationUtil {
 	}
 	
 	/**
-	 * É¸Ñ¡ÓÐÐ§×Ö·û
+	 * É¸Ñ¡ï¿½ï¿½Ð§ï¿½Ö·ï¿½
 	 */
 	public static String ExtractVaildString(String str) {
-		return str.replaceAll( "\\s*|\t|\r|\n","");
+		return str.replaceAll( "\f|\t|\r|\n","");
 	}
 	
 	public static void  WriteStr2File(String str,File file,String encode){
@@ -101,14 +101,16 @@ public class ExtractionOperationUtil {
 		char[] charArray=str.toCharArray();
 		for(char c :charArray)
 		{
-			if(c!= ' ')
+			System.out.print(c);
+			//if(c!= ' ')
 			{
-				if(ExtractionOperationUtil.isChineseCharacters(String.valueOf(c)))
-				{
+//				if(ExtractionOperationUtil.isChineseCharacters(String.valueOf(c)))
+//				{
 					checkCharInMapNum(chineseCharMap, c);
-				}else{
-					checkCharInMapNum(unchineseCharMap, c);
-				}
+//				}
+//				else{
+//					checkCharInMapNum(unchineseCharMap, c);
+//				}
 			}
 		}
 		
@@ -119,7 +121,7 @@ public class ExtractionOperationUtil {
 			strBuf.append(c);
 		}
 		result.setChineseCharString(strBuf.toString());
-		
+		System.out.println(strBuf.length());
 		if(strBuf.length()>0)
 			strBuf.delete(0,strBuf.length());
 		for(char c :unchineseCharMap.keySet()){
@@ -128,7 +130,7 @@ public class ExtractionOperationUtil {
 		result.setUnChineseCharString(strBuf.toString());
 		//System.out.println(resultStr);
 //		for(int n :chineseCharMap.values()){
-//			System.out.println("×ÖÊý"+n);
+//			System.out.println("ï¿½ï¿½ï¿½ï¿½"+n);
 //		}
 		return result;
 	}

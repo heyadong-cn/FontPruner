@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FontExtract:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/FontExtract_jar</output-path>
+    <root id="archive" name="FontExtract.jar">
+      <element id="module-output" name="FontExtract" />
+      <element id="library" level="module" name="json-lib-2.2.3-jdk15.jar" module-name="FontExtract" />
+    </root>
+  </artifact>
+</component>
